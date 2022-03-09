@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*后代选择器（以空格分隔*/
+        /*子元素选择器（以大于号分隔*/
+        /*相邻兄弟选择器（以加号分隔*/
+        /*后续兄弟选择器（以小波浪线分隔*/
+
+        /*后代选择器*/
+        /*后代选择器用于选取某元素的后代元素，无论层级有多深*/
+        /*以下将选中id为abc的元素中的所有li元素*/
+        #abc li {
+            background: #51a7e8;
+        }
+
+        /*子元素选择器*/
+        /*与后代选择器相比，子元素选择器只能选择其父元素的直接子元素*/
+        #ab1 > ul > li {
+            color: #cc0000;
+        }
+
+        /*相邻兄弟选择器*/
+        /*可选择紧挨在另一元素后的元素（只选择紧随其后的一个，且二者有相同的父元素*/
+        #ax1 + li {
+            color: #66cc66;
+        }
+
+        /*后续兄弟选择器*/
+        /*后续兄弟选择器选取所有指定元素之后的相邻兄弟元素*/
+        #ay1 ~ li {
+            color: #66cc66;
+        }
+
+    </style>
+</head>
+<body>
+<div id="abc">
+    <div id="ab1">
+        <ul>
+            <li>111</li>
+            <li>333</li>
+            <li>444</li>
+        </ul>
+    </div>
+    <div id="ab2">
+        <ul>
+            <li>aaa</li>
+            <li>ccc</li>
+            <li>ddd</li>
+        </ul>
+    </div>
+</div>
+<ul>
+    <li>111</li>
+    <li id="ax1">222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+<ul>
+    <li>aaa</li>
+    <li id="ay1">bbb</li>
+    <li>ccc</li>
+    <li>ddd</li>
+    <li>eee</li>
+</ul>
+</body>
+</html>

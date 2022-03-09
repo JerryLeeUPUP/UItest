@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*id 选择器*/
+        /*id 选择器以 # 号定义*/
+        #abc {
+            color: #cc0000;
+        }
+
+        /*class 选择器*/
+        /*在 css 当中，class 选择器以 . 来定义，若有空格可以用 . 代替*/
+        .abc.ab1.ab2 {
+            color: #0044bb;
+        }
+
+        /*标签选择器*/
+        /*标签选择器可以选中同类型的HTML标签元素*/
+        p{
+            font-size: 22px;
+        }
+
+        /*标签选择器可以和class选择器结合起来使用*/
+        p.ab1{
+            background: yellow;
+        }
+
+        /*属性选择器*/
+        /*属性选择器可以选择具有特定属性的HTML元素*/
+        /*以下选择所有包含title属性的元素*/
+        [title]{
+            background: #0044bb;
+        }
+        /*我们可以为属性指定值*/
+        [title="wa"]{
+            color: #cc0000;
+        }
+        /*我们也可以为元素指定标签*/
+        a[href]{
+            color: #cc0000;
+        }
+        /*并且还可以支持单词边界*/
+        p[class~="world"]{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<p id="abc">123456</p>
+<!--class 属性由多个值组成的，像下方这种带空格的，叫做复合类-->
+<!--当你使用class name方式定位元素的时候，如果带上空格，是定位不到元素的-->
+<!--我们只需要选择复合类中的任意一个单词就可以了-->
+<p class="abc ab1 ab2">abcdef</p>
+<p class="ab3">北城天天挨打</p>
+<a href="http://www.baidu.com">哈哈哈，标签选择器选不到我</a>
+<ul>
+    <li title="mt">普通家庭马化腾</li>
+    <li title="wa">不爱钱财杰克马</li>
+    <li>最喜养猪丁三石</li>
+</ul>
+<p class="hello world">~就是tab键上方的那个按键</p>
+</body>
+</html>
