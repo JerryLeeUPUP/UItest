@@ -1,5 +1,5 @@
 # -*- coding: utf-8  -*-
-# @File     : 2、文件上传.py
+# @File     : 2文件上传.py
 # @author   : Jerry
 # @datetime : 2022/3/14 15:31
 # @software : PyCharm
