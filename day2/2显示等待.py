@@ -15,7 +15,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # 创建浏览器驱动对象
-driver = webdriver.Chrome("D:\\tool\selenium\chromedriver.exe")
+driver = webdriver.Chrome()
 # 访问网址
 driver.get("http://www.baidu.com")
 
