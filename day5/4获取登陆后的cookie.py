@@ -9,8 +9,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pprint
+#屏蔽 windows.navigator.webdriver,即屏蔽所有广告弹窗
+options = webdriver.ChromeOptions()
+# 设置为开发者模式，防止被各大网站识别出来使用了Selenium
+options.add_experimental_option('excludeSwitches', ['enable-automation'])
+# # 不加载图片,加快访问速度
+# options.add_experimental_option(
+# "prefs", {"profile.managed_default_content_settings.images": 2})
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 driver.get("https://qa2-www.yunquna.com/")
 
 driver.implicitly_wait(10)
@@ -20,7 +27,8 @@ driver.implicitly_wait(10)
 #    )
 #)
 driver.maximize_window()
-driver.find_element_by_css_selector("img.close-icon").click()
+#关闭广告弹窗
+#driver.find_element_by_css_selector("img.close-icon").click()
 #点击注册/登录按钮
 driver.find_element_by_css_selector("div.common-top-bar-info-operate-area").click()
 
